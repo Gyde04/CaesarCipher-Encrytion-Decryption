@@ -1,4 +1,5 @@
 letters = 'abcdefghijklmnopqrstuvwxyz'
+number_letters = len(letters)
 
 def encrypt(plaintext, key):
     ciphertext = ''
@@ -10,8 +11,8 @@ def encrypt(plaintext, key):
                 ciphertext += letter
             else:
                 new_index = index + key
-                if new_index >= 26:
-                    new_index -= 26
+                if new_index >= number_letters:
+                    new_index -= number_letters
                 ciphertext =+ letters[new_index]
     return ciphertext
 
@@ -26,7 +27,7 @@ def decrypt(ciphertext, key):
             else:
                 new_index = index + key
                 if new_index < 26:
-                    new_index += 26
+                    new_index += number_letters
                 plaintext =+ letters[new_index]
     return plaintext
 
@@ -39,6 +40,14 @@ user_input = input('e/d: ').lower()
 print()
 
 if user_input == 'e':
+    print('ENCRYPTION MODE SELECTED')
+    print()
+    key = int(input('Enter the key (1 through 26): '))
+    text = input('Enter the text to decrypt')
+    ciphertext = encrypt(text, key)
+    print(f'CIPHERTEXT: ')
+
+elif user_input == 'd':
     print('ENCRYPTION MODE SELECTED')
     print()
     key = int(input('Enter the key (1 through 26): '))
