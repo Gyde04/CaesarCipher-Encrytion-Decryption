@@ -17,7 +17,7 @@ def encrypt(plaintext, key):
 
 
 print()
-print('***  CAESAR CIPHER PROGRAM ***')
+print('*** CAESAR CIPHER PROGRAM ***')
 print()
 
 print('Do you want to encrypt or decrypt?')
