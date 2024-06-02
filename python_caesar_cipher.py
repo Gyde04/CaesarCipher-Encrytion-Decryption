@@ -1,5 +1,9 @@
 letters = 'janhsbkvjfksnvhfbvjabnfjvaikf'
 
+def encrypt(plaintext, key):
+    ciphertext = ''
+
+
 print()
 print('***  CAESAR CIPHER PROGRAM ***')
 print()
