@@ -2,6 +2,10 @@ letters = 'janhsbkvjfksnvhfbvjabnfjvaikf'
 
 def encrypt(plaintext, key):
     ciphertext = ''
+    for letter in plaintext:
+        letter = letter.lower()
+        if not letter == ' ':
+            index = letters.find(letter)
 
 
 print()
