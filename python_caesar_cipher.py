@@ -1,4 +1,4 @@
-letters = 'janhsbkvjfksnvhfbvjabnfjvaikf'
+letters = 'abcdefghijklmnopqrstuvwxyz'
 
 def encrypt(plaintext, key):
     ciphertext = ''
@@ -6,6 +6,14 @@ def encrypt(plaintext, key):
         letter = letter.lower()
         if not letter == ' ':
             index = letters.find(letter)
+            if index == -1:
+                ciphertext += letter
+            else:
+                new_index = index + key
+                if new_index >= 26:
+                    new_index -= 26
+                ciphertext =+ letters[new_index]
+    return ciphertext
 
 
 print()
