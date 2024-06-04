@@ -15,6 +15,20 @@ def encrypt(plaintext, key):
                 ciphertext =+ letters[new_index]
     return ciphertext
 
+def decrypt(ciphertext, key):
+    plaintext = ''
+    for letter in ciphertext:
+        letter = letter.lower()
+        if not letter == ' ':
+            index = letters.find(letter)
+            if index == -1:
+                plaintext += letter
+            else:
+                new_index = index + key
+                if new_index < 26:
+                    new_index += 26
+                plaintext =+ letters[new_index]
+    return plaintext
 
 print()
 print('*** CAESAR CIPHER PROGRAM ***')
